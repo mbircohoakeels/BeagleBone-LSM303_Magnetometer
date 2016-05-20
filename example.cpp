@@ -3,7 +3,7 @@
 using namespace std;
 
 int main( ) {
-    using namespace I2C;
+    using namespace abI2C;
 
     LSM303Magnetometer *Magnetometer;
 

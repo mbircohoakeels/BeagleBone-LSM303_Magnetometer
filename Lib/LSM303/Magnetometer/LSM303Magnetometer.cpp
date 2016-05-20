@@ -7,7 +7,7 @@
 LSM303Magnetometer::LSM303Magnetometer( unsigned char _DeviceAddress, int _BusId ) {
     this->SetDeviceAddress( _DeviceAddress );
     this->SetBusId( _BusId );
-    this->InitI2C( );
+    this->InitDevice( );
     this->LoadRecommendedFlightSettings( );
     this->Init( );
     this->StartRecordingHeading( );
