@@ -375,9 +375,7 @@ public:
 
     uint8_t GetMRRegMSettings( ){ return this->MRRegMSettings; }
 
-    void InitAccelerometer( );
-
-    void InitMagnetometer( );
+    void Init( );
 
     short X, Y, Z;
 

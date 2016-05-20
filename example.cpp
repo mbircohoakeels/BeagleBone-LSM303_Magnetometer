@@ -9,6 +9,11 @@ int main( ) {
 
     Magnetometer = new LSM303Magnetometer( );
 
+    Magnetometer->SetHeadingAverages( 50 );
+
+    cout << "Averages : " << endl <<
+    "    Heading = " << Magnetometer->avgHeading << endl;
+
     while( 1 ) {
         cout << "X = " << Magnetometer->X << " | Y = " << Magnetometer->Y << " | Z = " << Magnetometer->Z << endl;
         cout << "Heading = " << Magnetometer->Heading( ) << endl;

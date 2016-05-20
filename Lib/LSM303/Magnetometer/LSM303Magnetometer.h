@@ -12,15 +12,31 @@
 
 using namespace std;
 
+#define MAX_DATASTORE 15
+
 class LSM303Magnetometer : public LSM303DLHC {
 
 public:
 
     LSM303Magnetometer( unsigned char _DeviceAddress = MAG_ADDRESS, int _BusId = 1 );
 
+    void SetHeadingAverages( int iterations = 50 );
+
     double Heading( );
 
+    double avgHeading;
+
+    double HeadingDataStoredValues[MAX_DATASTORE];
+
 private:
+
+    void StartRecordingHeading( );
+
+    void AddToHeadingDataStore( );
+
+    static void* GetMagnetometerValues(  void *_ACCEL  );
+
+    pthread_t LSM303UpdateValuesThread;
 
 };
 
